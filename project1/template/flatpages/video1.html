@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Cinema</title>
+
+
+
+
+    <link rel="stylesheet" href="{% static '/flatpages/bootstrap/css/1.css'%}">
+
+
+</head>
+<style>
+    .img{
+    background-position:centre;
+    height:400px;
+    background-image: url('{% static "/flatpages/bootstrap/pictures/kino2.png"%}');
+    background-color:;
+    background-size:100%;
+    background-repeat:no-repeat;
+
+}
+</style>
+<header>
+    <div class="img" >
+        <button class="enter"><a href="/sign/registretion">Вход</a></button>
+         <nav>
+            <div class="topnav" id="myTopnav">
+                <a class="url" href="#movie">ФИЛЬМЫ</a>
+                <a class="url" href="#stats">СТАТИСТИКА</a>
+                <a class="url" href="#news">НОВОСТИ</a>
+                <a class="url" href="">О НАС</a>
+
+            </div>
+        </nav>
+    </div>
+</header>
+<body>
+
+
+
+<div class="video">
+    <video width="800" height="500" controls src="{% static '/flatpages/bootstrap/video/2021-05-16 13-51-26.mkv' %}"
+    </video>
+</div>
+
+<div class="description">
+    <h2>Описание </h2>
+    {% block content%}
+
+    {{flatpage.content}}
+    {%endblock content%}
+
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="text-center">Comments</h2>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="comment-field" id="comment-field"></div>
+        </div>
+
+        <div class="col-lg-6">
+
+            <form onsubmit="return false;">
+                <div class="form-group">
+                    <label for="comment-name">Name:</label>
+                    <input type="name" class="form-control1" id="comment-name" placeholder="Ваше Имя">
+                </div>
+                <div class="form-group">
+                    <label for="comment-body">Comment:</label>
+                    <input type="name" class="form-control2" id="comment-body" placeholder="Ваш комментарий">
+                </div>
+                <div class="form-group text-right">
+                    <button type="submit" id="comment-add" class="btn-primary">Добавить комментарий</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="down">
+   <h3>О нас</h3>
+    <h5>Наш сайт предоставляет услуги просмотра разных фильмов, так же мы желаем подарить вам незабываемые вечера</h5>
+    <p><i class="fas fa-phone-square-alt"></i>+1 234 567 890</p>
+</div>
+
+<script src="{% static 'flatpages/bootstrap/js/index.js' %}"></script> 
+
+</body>
+</html>
+
